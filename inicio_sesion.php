@@ -6,30 +6,28 @@
     <meta name="author" content="">
     <link rel="icon" href="imágenes/logo_size.jpg">
 
-    <title>Crear cuenta</title>
+    <title>Iniciar sesión</title>
 
     <link href="bootstrap.css" rel="stylesheet">
     <link href="signin.css" rel="stylesheet">
   </head>
 
   <body class="text-center" data-gr-c-s-loaded="true">
-    <form class="form-signin">
+    <form class="form-signin" action="login.php" method="post">
       <img class="mb-4" src="imágenes/logo_size_invert.jpg" alt="" width="72" height="72">
-      <h1 class="h3 mb-3 font-weight-normal">Por favor crea una cuenta</h1>
+      <h1 class="h3 mb-3 font-weight-normal">Por favor inicia sesión</h1>
       <label for="inputEmail" class="sr-only">Dirección de correo</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Dirección de correo" required="" autofocus="">
+      <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Dirección de correo" required="" autofocus="">
       <label for="inputPassword" class="sr-only">Contraseña</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required="">
-      <label for="confirmPassword" class="sr-only">Confirmar contraseña</label>
-      <input type="password" id="confirmPassword" class="form-control" placeholder="Confirmar contraseña" required="">
+      <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required="">
       <div class="checkbox mb-3">
         <label>
           <input type="checkbox" value="remember-me"> Recuérdame
         </label>
       </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Crear cuenta</button>
-
+      <a href="dashboard.html" target="_blank">
+      <button class="btn btn-lg btn-primary btn-block" type="submit" >Iniciar sesión</button>
+      </a>
     </form>
-
-
-</body></html>
+</body>
+</html>
