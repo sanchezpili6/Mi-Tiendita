@@ -31,6 +31,7 @@
       </ul>
     </nav>
     <!--Barra de navegaciónde arriba-->
+    
     <!--Barra de la izquierda-->
     <div class="container-fluid">
       <div class="row">
