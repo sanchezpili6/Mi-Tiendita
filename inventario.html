@@ -8,8 +8,9 @@
     <title>Inventario</title>
   </head>
   <body>
+    <!--Barra de navegaciónde arriba-->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Mi Tiendita</a>
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="index.html">Mi Tiendita</a>
       <div class="collapse navbar-collapse sticky-top" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
@@ -29,7 +30,8 @@
         </li>
       </ul>
     </nav>
-
+    <!--Barra de navegaciónde arriba-->
+    <!--Barra de la izquierda-->
     <div class="container-fluid">
       <div class="row">
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
@@ -103,7 +105,8 @@
         </nav>
       </div>
     </div>
-
+    <!--Barra de la izquierda-->
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
     <table class="table container-fluid">
       <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
       <thead class="thead-dark">
@@ -137,6 +140,7 @@
       mysqli_close($con);
       ?>
     </table>
+  </main>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="../../assets/js/vendor/popper.min.js"></script>
