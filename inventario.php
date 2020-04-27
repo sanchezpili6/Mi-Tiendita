@@ -130,7 +130,7 @@
 
       $sql = "SELECT * FROM productos";
       $res = mysqli_query($con, $sql);
-
+      
       while($row = mysqli_fetch_assoc($res)){
         echo "
         <tbody>

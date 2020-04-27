@@ -129,16 +129,25 @@
                       <div class="text-center">
                           <h4 class="text-dark mb-4">Registrar usuario</h4>
                       </div>
-                      <form class="user">
+                      <form class="user" action="registroPer.php" method="post">
                           <div class="form-group row">
-                              <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="text" id="exampleFirstName" placeholder="Nombres" name="first_name"></div>
-                              <div class="col-sm-6"><input class="form-control form-control-user" type="text" id="exampleFirstName" placeholder="Apellidos" name="last_name"></div>
+                              <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="text" id="exampleFirstName" placeholder="Nombres" name="Nombre"></div>
+                              <div class="col-sm-6"><input class="form-control form-control-user" type="text" id="exampleFirstName" placeholder="Apellidos" name="Apellido"></div>
                           </div>
-                          <div class="form-group"><input class="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="dirección correo" name="email"></div>
+                          <div class="form-group"><input class="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Dirección correo" name="Email"></div>
                           <div class="form-group row">
-                              <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="password" id="examplePasswordInput" placeholder="Contraseña" name="password"></div>
-                              <div class="col-sm-6"><input class="form-control form-control-user" type="password" id="exampleRepeatPasswordInput" placeholder="Confirma contraseña" name="password_repeat"></div>
-                          </div><button class="btn btn-primary btn-block text-white btn-user" type="submit">Registrar usuario</button>
+                              <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="password" id="examplePasswordInput" placeholder="Contraseña" name="Password"></div>
+                          </div>
+                          <div class="form-group row">
+                              <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="text" id="exampleID" placeholder="ID" name="Id"></div>
+                              <div class="col-sm-6"><input class="form-control form-control-user" type="text" id="exampleSueldo" placeholder="Sueldo" name="Sueldo"></div>
+                          </div>
+                          <div class="form-group row">
+                              <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="text" id="exampleDias" placeholder="Dias" name="Dias"></div>
+                              <div class="col-sm-6"><input class="form-control form-control-user" type="text" id="exampleHorario" placeholder="Horario" name="Horario"></div>
+                          </div>
+                          <div class="form-group"><input class="form-control form-control-user" type="text" id="exampleFechaRegistro" placeholder="Fecha de Registro" name="Registro"></div>
+                          <button class="btn btn-primary btn-block text-white btn-user" type="submit">Registrar usuario</button>
                           <hr>
                       </form>
                   </div>
