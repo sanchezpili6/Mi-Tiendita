@@ -137,7 +137,6 @@
                       </div>
                       <button class="btn btn-primary btn-purchase" type="submit">Realizar compra</button>
                   </section>
-
                   <!-- Product-->
 
                 </div>

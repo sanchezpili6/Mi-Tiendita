@@ -35,5 +35,5 @@
 
   mysqli_close($con);
 
-  //header("Location: http://localhost/Mi-Tiendita/cajero.html");
+  //header("Location: http://localhost/Mi-Tiendita/cajero.php");
  ?>
