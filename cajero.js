@@ -76,7 +76,7 @@ function addItemToCart(title, price) {
         </div>
         <span class="cart-price cart-column">${price}</span>
         <div class="cart-quantity cart-column">
-            <input name="${title}" class="cart-quantity-input" type="number" value="1">
+            <input class="cart-quantity-input" type="number" value="1">
             <button class="btn btn-danger" type="button">REMOVE</button>
         </div>`
     cartRow.innerHTML = cartRowContents
@@ -86,6 +86,7 @@ function addItemToCart(title, price) {
 }
 
 function createCookie(name, value, days) {
+  document.cookie = name+"=; expires Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
   var expires;
   if (days) {
     var date = new Date();
@@ -109,7 +110,7 @@ function updateCartTotal(title) {
         var price = parseFloat(priceElement.innerText.replace('$', ''))
         var quantity = quantityElement.value
         console.log(title);
-        createCookie(title, quantity, "10");
+        createCookie(i, quantity, "10");
         total = total + (price * quantity)
     }
     total = Math.round(total * 100) / 100

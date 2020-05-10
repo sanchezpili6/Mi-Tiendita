@@ -28,12 +28,15 @@
   //   $sqlUpdate = "UPDATE productos SET existencias=$newValue WHERE nombre = 'helado hersheys'";
   //   $query = mysqli_query($con, $sqlUpdate);
   // }
-
-  $first = $_REQUEST['first'];
-  $second = $_REQUEST['second'];
-  $third = $_REQUEST['third'];
+  $i = 0;
+  $cookies = array();
+  while (isset($_COOKIE[$i])) {
+    $cookies[$i] = $_COOKIE[$i];
+    echo $_COOKIE[$i];
+    $i++;
+  }
 
   mysqli_close($con);
 
-  //header("Location: http://localhost/Mi-Tiendita/cajero.php");
+  header("Location: http://localhost/Mi-Tiendita/cajero.php");
  ?>
