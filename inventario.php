@@ -136,6 +136,9 @@
       if (!isset($_REQUEST['search']) || $_REQUEST['search'] === "") {
         $sql = "SELECT * FROM productos";
       }
+      elseif($_REQUEST['search'] === "vendidos") {
+        $sql = "SELECT * FROM productos ORDER BY vendidos DESC";
+      }
       else {
         $search = $_REQUEST['search'];
         $sql = "SELECT * FROM productos WHERE nombre = '$search'";
