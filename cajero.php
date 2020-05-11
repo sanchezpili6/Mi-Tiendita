@@ -64,7 +64,11 @@
                 </a>
               </li>
               <li class="nav-item">
+<<<<<<< HEAD
                 <a class="nav-link" href="inventario.php">
+=======
+                <a class="nav-link" href="inventario.html">
+>>>>>>> master
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
                   Ver inventario
                 </a>
@@ -97,12 +101,24 @@
       <div class="container content-section" name="cobra">
         <link href="cajero.css" rel="stylesheet">
         <div class="row mb-5">
+<<<<<<< HEAD
+<<<<<<<< HEAD:cajero.php
           <form action="nuevaVenta.php">
+========
+          <form action="nuevaVenta.php" method="post">
+>>>>>>>> master:cajero.html
+=======
+          <form action="nuevaVenta.php">
+>>>>>>> master
             <div class="col-lg-8 pr-xl-5">
               <div class="cart mb-5">
                 <div class="cart-body">
                   <section class="container content-section">
                     <input type="text" name="busca" class="form-control form-control-light w-100" placeholder="Busca el producto" aria-label="Busca">
+<<<<<<< HEAD
+<<<<<<<< HEAD:cajero.php
+=======
+>>>>>>> master
 
               <h2 align="center" class="h1">Productos</h2>
               <div class="shop-items">
@@ -153,6 +169,64 @@
                       <button class="btn btn-primary btn-purchase" type="submit">Realizar compra</button>
                   </section>
                   <!-- Product-->
+<<<<<<< HEAD
+========
+
+              <h2 align="center" class="h1">Productos</h2>
+              <div class="shop-items">
+                  <div class="shop-item">
+                      <span class="shop-item-title">Nito</span>
+                      <div class="shop-item-details">
+                          <span class="shop-item-price">$15</span>
+                          <button class="btn btn-primary shop-item-button" type="button">AÑADIR A CARRITO</button>
+                      </div>
+                  </div>
+                  <div class="shop-item">
+                      <span class="shop-item-title">HeladoHersheys</span>
+                      <div class="shop-item-details">
+                          <span class="shop-item-price">$59</span>
+                          <button class="btn btn-primary shop-item-button" type="button">AÑADIR A CARRITO</button>
+                      </div>
+                  </div>
+                  <div class="shop-item">
+                      <span class="shop-item-title">Chokis</span>
+                      <div class="shop-item-details">
+                          <span class="shop-item-price">$14.5</span>
+                          <button class="btn btn-primary shop-item-button" type="button">AÑADIR A CARRITO</button>
+                      </div>
+                  </div>
+                  <div class="shop-item">
+                      <span class="shop-item-title">ChokoChokis</span>
+                      <div class="shop-item-details">
+                          <span class="shop-item-price">$20</span>
+                          <button class="btn btn-primary shop-item-button" type="button">AÑADIR A CARRITO</button>
+                      </div>
+                  </div>
+              </div>
+          </section>
+                    <section class="container content-section">
+                      <br><br><br>
+                      <div class="cart-row">
+                          <span class="cart-item cart-header cart-column">ITEM</span>
+                          <span class="cart-item cart-header cart-column">PRICE</span>
+                          <span class="cart-item cart-header cart-column">QUANTITY</span>
+                      </div>
+                      <br><br>
+                      <div class="cart-items">
+                      </div>
+                      <div class="cart-total">
+                          <strong class="cart-total-title">Total</strong>
+                          <span class="cart-total-price">$0</span>
+                      </div>
+                      <button class="btn btn-primary btn-purchase" type="submit">Realizar compra</button>
+                  </section>
+
+                  <!-- Product-->
+
+>>>>>>>> master:cajero.html
+=======
+
+>>>>>>> master
                 </div>
               </div>
             </div>
