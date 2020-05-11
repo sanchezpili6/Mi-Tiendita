@@ -99,8 +99,6 @@
         <link href="cajero.css" rel="stylesheet">
         <div class="row mb-5">
           <form action="nuevaVenta.php">
-          <form action="nuevaVenta.php" method="post">
-          <form action="nuevaVenta.php">
             <div class="col-lg-8 pr-xl-5">
               <div class="cart mb-5">
                 <div class="cart-body">
@@ -156,6 +154,10 @@
                       <button class="btn btn-primary btn-purchase" type="submit">Realizar compra</button>
                   </section>
                   <!-- Product-->
+          </form>
+        </div>
+      </div>
+    </section>
             </main>
             </div>
             </div>
