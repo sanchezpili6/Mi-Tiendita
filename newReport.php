@@ -9,4 +9,5 @@
   $query = "INSERT INTO reportes (idCajero, fecha, cuerpo) values($id, '".$fecha."', '".$body."')";
   $res = mysqli_query($con, $query);
   echo mysqli_error($con);
+  header("Location: http://localhost/Mi-Tiendita/newReportUI.php?status=0");
 ?>

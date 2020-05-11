@@ -72,6 +72,21 @@
         </div>
           </nav>
           <!--Barra izquierda-->
+          <?php
+            if (isset($_GET['status'])) {
+              if ($_GET['status'] === '0') {
+                echo "<div class='col-md-9 ml-sm-auto col-lg-10 pt-3 px-4 alert alert-success' role='alert'>
+                        Se ha realizado el registro exitosamente
+                      </div>";
+              }
+              elseif ($_GET['status'] === '1'){
+                $product = $_GET['products'];
+                echo "<div class='col-md-9 ml-sm-auto col-lg-10 pt-3 px-4 alert alert-danger' role='alert'>
+                        Falló el registro
+                     </div>";
+              }
+            }
+          ?>
           <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
           <div class="card shadow-lg o-hidden border-0 my-5">
             <div class="card-body p-0">
