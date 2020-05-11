@@ -24,7 +24,7 @@
             <a class="nav-link" href="dashboard.html">Informes</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="cajero.php">Cajero</a>
+            <a class="nav-link" href="cajero.html">Cajero</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="registroper.html">Registar usuario</a>
@@ -45,7 +45,7 @@
         <div class="sidebar-sticky">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link" href="cajero.php">
+              <a class="nav-link" href="cajero.html">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
                 Cobrar <span class="sr-only">(current)</span>
               </a>
@@ -63,7 +63,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="inventario.php">
+              <a class="nav-link" href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
                 Ver inventario
               </a>
@@ -84,15 +84,15 @@
                             <div class="text-center">
                                 <h4 class="text-dark mb-4">Registra a tu cliente!</h4>
                             </div>
-                            <form class="user">
+                            <form class="user" action="registroCli.php" method="post">
+                              <div class="form-group"><input class="form-control form-control-user" type="text" id="exampleFirstName" placeholder="Nombre completo" name="name"></div>
                                 <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="text" id="exampleFirstName" placeholder="Nombres" name="first_name"></div>
-                                    <div class="col-sm-6"><input class="form-control form-control-user" type="text" id="exampleFirstName" placeholder="Apellidos" name="last_name"></div>
+                                    <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="text" id="exampleInputID" placeholder="id" name="id"></div>
                                 </div>
                                 <div class="form-group"><input class="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="dirección correo" name="email"></div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="password" id="examplePasswordInput" placeholder="Contraseña" name="password"></div>
-                                    <div class="col-sm-6"><input class="form-control form-control-user" type="password" id="exampleRepeatPasswordInput" placeholder="Confirma contraseña" name="password_repeat"></div>
+                                    <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="text" id="exampleDateInput" placeholder="Fecha" name="fecha"></div>
                                 </div><button class="btn btn-primary btn-block text-white btn-user" type="submit">Registrar cliente</button>
                                 <hr>
                             </form>
