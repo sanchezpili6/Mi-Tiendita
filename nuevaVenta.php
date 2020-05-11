@@ -70,5 +70,8 @@
   mysqli_close($con);
 
   //header("Location: http://localhost/Mi-Tiendita/cajero.php");
+<<<<<<< HEAD
+>>>>>>> parent of db00d12... Ya jalan las cookies de js
+=======
 >>>>>>> parent of db00d12... Ya jalan las cookies de js
  ?>

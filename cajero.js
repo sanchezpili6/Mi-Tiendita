@@ -89,6 +89,7 @@ function addItemToCart(title, price) {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 function updateCartTotal(title) {
   var cartItemContainer = document.getElementsByClassName('cart-items')[0];
   var cartRows = cartItemContainer.getElementsByClassName('cart-row');
@@ -121,6 +122,9 @@ function updateCartTotal(title) {
 
 function createCookie(name, quantity, days, title) {
   document.cookie = name+"=; expires Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+=======
+function createCookie(name, value, days) {
+>>>>>>> parent of db00d12... Ya jalan las cookies de js
 =======
 function createCookie(name, value, days) {
 >>>>>>> parent of db00d12... Ya jalan las cookies de js
