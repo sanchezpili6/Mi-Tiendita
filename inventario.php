@@ -127,6 +127,7 @@
           <th>Existencias</th>
           <th>Precio</th>
           <th>Costo</th>
+          <th>Vendidos</th>
         </tr>
       </thead>
       <?php
@@ -149,6 +150,7 @@
             <td>".$row['existencias']."</td>
             <td>".$row['precio']."</td>
             <td>".$row['costo']."</td>
+            <td>".$row['vendidos']."</td>
           </tr>
         </tbody>";
       }
