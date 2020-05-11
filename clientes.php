@@ -1,32 +1,25 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="imágenes/logo_size.jpg">
-
-    <title>Registrar usuario</title>
+<html lang="en" dir="ltr">
+  <head>
     <link href="bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
-  <style type="text/css">/* Chart.js */
-@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style></head>
-
-  <body data-gr-c-s-loaded="true">
-  <!--Barra de navegación de arriba-->
+    <meta charset="utf-8">
+    <link rel="icon" href="imágenes/logo_size.jpg">
+    <title>Inventario</title>
+  </head>
+  <body>
+    <!--Barra de navegaciónde arriba-->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="index.html">Mi Tiendita</a>
       <div class="collapse navbar-collapse sticky-top" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="dashboard.html">Informes</a>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Informes</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="cajero.html">Cajero</a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="registroper.html">Registar usuario</a>
           </li>
       </ul>
@@ -37,8 +30,8 @@
         </li>
       </ul>
     </nav>
-  <!--Barra de navegaciónde arriba-->
-  <!--Barra de la izquierda-->
+    <!--Barra de navegaciónde arriba-->
+    <!--Barra de la izquierda-->
     <div class="container-fluid">
       <div class="row">
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
@@ -47,7 +40,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="dashboard.html">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                  Dashboard <span class="sr-only">(current)</span>
+                  Dashboard
                 </a>
               </li>
               <li class="nav-item">
@@ -57,9 +50,9 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="inventario.html">
+                <a class="nav-link active" href="inventario.html">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                  Productos
+                  Productos <span class="sr-only">(current)</span>
                 </a>
               </li>
               <li class="nav-item">
@@ -69,7 +62,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="personal.php">
+                <a class="nav-link" href="personal.html">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                   Personal
                 </a>
@@ -116,44 +109,46 @@
             </ul>
           </div>
         </nav>
+      </div>
+    </div>
     <!--Barra de la izquierda-->
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-    <div class="card shadow-lg o-hidden border-0 my-5">
-      <div class="card-body p-0">
-          <div class="row">
-              <div class="col-lg-5 d-none d-lg-flex">
-                  <div class="flex-grow-1 bg-register-image"> <img src="imágenes/venta.jpeg" width="650" height="560"></div>
-              </div>
-              <div class="col-lg-7">
-                  <div class="p-5">
-                      <div class="text-center">
-                          <h4 class="text-dark mb-4">Registrar usuario</h4>
-                      </div>
-                      <form class="user" action="registroPer.php" method="post">
-                          <div class="form-group row">
-                              <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="text" id="exampleFirstName" placeholder="Nombres" name="Nombre"></div>
-                              <div class="col-sm-6"><input class="form-control form-control-user" type="text" id="exampleFirstName" placeholder="Apellidos" name="Apellido"></div>
-                          </div>
-                          <div class="form-group"><input class="form-control form-control-user" type="email" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="dirección correo" name="Email"></div>
-                          <div class="form-group row">
-                              <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="password" id="examplePasswordInput" placeholder="Contraseña" name="Password"></div>
-                          </div>
-                          <div class="form-group row">
-                              <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="text" id="exampleID" placeholder="ID" name="Id"></div>
-                              <div class="col-sm-6"><input class="form-control form-control-user" type="text" id="exampleSueldo" placeholder="Sueldo" name="Sueldo"></div>
-                          </div>
-                          <div class="form-group row">
-                              <div class="col-sm-6 mb-3 mb-sm-0"><input class="form-control form-control-user" type="text" id="exampleDias" placeholder="Dias" name="Dias"></div>
-                              <div class="col-sm-6"><input class="form-control form-control-user" type="text" id="exampleHorario" placeholder="Horario" name="Horario"></div>
-                          </div>
-                          <div class="form-group"><input class="form-control form-control-user" type="text" id="exampleFechaRegistro" placeholder="Fecha de Registro" name="Registro"></div>
-                          <button class="btn btn-primary btn-block text-white btn-user" type="submit">Registrar usuario</button>
-                          <hr>
-                      </form>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+    <table class="table container-fluid">
+      <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+      <thead class="thead-dark">
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Fecha de registro</th>
+          <th>Correo electrónico</th>
+        </tr>
+      </thead>
+      <?php
+      include "db.php";
+      global $con;
+
+      $sql = "SELECT * FROM clientes";
+      $res = mysqli_query($con, $sql);
+
+      while($row = mysqli_fetch_assoc($res)){
+        echo "
+        <tbody>
+          <tr>
+            <td>".$row['id']."</td>
+            <td>".$row['nombre']."</td>
+            <td>".$row['fecha']."</td>
+            <td>".$row['correo']."</td>
+          </tr>
+        </tbody>";
+      }
+
+      mysqli_close($con);
+      ?>
+    </table>
   </main>
-</body></html>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+  </body>
+</html>
