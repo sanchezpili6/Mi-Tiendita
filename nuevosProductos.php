@@ -112,53 +112,52 @@
       </div>
     </div>
     <!--Barra de la izquierda-->
+    <?php
+      if (isset($_GET['status'])) {
+        if ($_GET['status'] === '0') {
+          echo "<div class='col-md-9 ml-sm-auto col-lg-10 pt-3 px-4 alert alert-success' role='alert'>
+                  Se ha registrado todo exitosamente
+                </div>";
+        }
+        elseif ($_GET['status'] === '1'){
+          $message = $_GET['error'];
+          echo "<div class='col-md-9 ml-sm-auto col-lg-10 pt-3 px-4 alert alert-danger' role='alert'>
+                  Hubo un problema con el registro: ".$message."
+               </div>";
+        }
+      }
+    ?>
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" name="search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    <br>
-    <table class="table container-fluid">
-      <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-      <thead class="thead-dark">
-        <tr>
-          <th>Id</th>
-          <th>Nombre</th>
-          <th>Existencias</th>
-          <th>Precio</th>
-          <th>Costo</th>
-        </tr>
-      </thead>
-      <?php
-      include "db.php";
-      global $con;
-      if (!isset($_REQUEST['search']) || $_REQUEST['search'] === "") {
-        $sql = "SELECT * FROM productos";
-      }
-      else {
-        $search = $_REQUEST['search'];
-        $sql = "SELECT * FROM productos WHERE nombre = '$search'";
-      }
-      $res = mysqli_query($con, $sql);
-      while($row = mysqli_fetch_assoc($res)){
-        echo "
-        <tbody>
+    <form action="meterProductos.php" method="post">
+      <table class="table container-fluid">
+        <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+        <thead class="thead-dark">
           <tr>
-            <td>".$row['id']."</td>
-            <td>".$row['nombre']."</td>
-            <td>".$row['existencias']."</td>
-            <td>".$row['precio']."</td>
-            <td>".$row['costo']."</td>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Existencias</th>
+            <th>Precio</th>
+            <th>Costo</th>
           </tr>
-        </tbody>";
-      }
-      mysqli_close($con);
-      ?>
-    </table>
+        </thead>
+        <tbody class="table-body">
+          <tr class="table-row">
+            <td class="table-data"><input class="id-1"></input></td>
+            <td class="table-data"><input class="name-1"></input></td>
+            <td class="table-data"><input class="stock-1"></input></td>
+            <td class="table-data"><input class="price-1"></input></td>
+            <td class="table-data"><input class="cost-1"></input></td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-primary" type="button" name="nuevaFila">Nueva fila</button>
+      <button class="btn btn-success" type="submit">Terminar</button>
+    </form>
   </main>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="../../assets/js/vendor/popper.min.js"></script>
     <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="nuevaFila.js"></script>
   </body>
 </html>

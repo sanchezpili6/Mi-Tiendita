@@ -64,7 +64,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="inventario.html">
+                <a class="nav-link" href="inventario.php">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
                   Ver inventario
                 </a>
@@ -83,7 +83,6 @@
                 }
                 elseif ($_GET['status'] === '1'){
                   $product = $_GET['products'];
-                  echo "AQUIII" . $product;
                   echo "<div class='col-md-9 ml-sm-auto col-lg-10 pt-3 px-4 alert alert-danger' role='alert'>
                           No hay suficientes existencias de ". $product.
                        "</div>";
@@ -154,7 +153,6 @@
                       <button class="btn btn-primary btn-purchase" type="submit">Realizar compra</button>
                   </section>
                   <!-- Product-->
-
                 </div>
               </div>
             </div>

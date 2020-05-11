@@ -12,6 +12,7 @@
     $status = '0';
     while($row = mysqli_fetch_assoc($res)){
       $newValue = $row['existencias'] - $quantity;
+      $totalVendidos = $row['vendidos'] + $quantity;
       if ($newValue < 0) {
         $status = '1';
         $productsMissing = $product.", ".$productsMissing;
@@ -19,10 +20,11 @@
       else {
         $sqlUpdate = "UPDATE productos SET existencias=$newValue WHERE nombre = '$product'";
         $query = mysqli_query($con, $sqlUpdate);
+        $sqlUpdate = "UPDATE productos SET vendidos=$totalVendidos WHERE nombre = '$product'";
+        $query = mysqli_query($con, $sqlUpdate);
       }
     }
   }
   mysqli_close($con);
-  echo $productsMissing;
   header("Location: http://localhost/Mi-Tiendita/cajero.php?status=".$status."&products=".$productsMissing);
 ?>

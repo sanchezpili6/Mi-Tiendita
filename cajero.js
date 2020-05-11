@@ -28,7 +28,6 @@ function ready() {
 }
 
 function purchaseClicked() {
-    alert('Gracias por tu compra')
     var cartItems = document.getElementsByClassName('cart-items')[0]
     while (cartItems.hasChildNodes()) {
         cartItems.removeChild(cartItems.firstChild)
