@@ -88,40 +88,7 @@ function addItemToCart(title, price) {
     cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-function updateCartTotal(title) {
-  var cartItemContainer = document.getElementsByClassName('cart-items')[0];
-  var cartRows = cartItemContainer.getElementsByClassName('cart-row');
-  var total = 0;
-  if (items.length == 0) {
-    items[0] = title;
-  }
-  else {
-    for (var i = 0; i < items.length; i++) {
-      console.log(items[i]);
-      if (items[i].localeCompare(title) !== 0){
-        items.push(title);
-      }
-    }
-    console.log(items);
-  }
-
-  for (var i = 0; i < cartRows.length; i++) {
-      var cartRow = cartRows[i]
-      var priceElement = cartRow.getElementsByClassName('cart-price')[0]
-      var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
-      var price = parseFloat(priceElement.innerText.replace('$', ''))
-      var quantity = quantityElement.value
-      createCookie(i, quantity, "10", title);
-      total = total + (price * quantity)
-  }
-  total = Math.round(total * 100) / 100
-  document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
-}
-
-function createCookie(name, quantity, days, title) {
-  document.cookie = name+"=; expires Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+function createCookie(name, value, days) {
 =======
 function createCookie(name, value, days) {
 >>>>>>> parent of db00d12... Ya jalan las cookies de js
@@ -138,9 +105,6 @@ function createCookie(name, value, days) {
   else {
     expires = "";
   }
-<<<<<<< HEAD
-  document.cookie = escape(name) + "=" + escape(quantity) + expires + "; path=/";
-=======
   document.cookie = escape(name) + "=" + escape(value) + expires + "; path=/";
 }
 
@@ -160,5 +124,4 @@ function updateCartTotal(title) {
     }
     total = Math.round(total * 100) / 100
     document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
->>>>>>> parent of db00d12... Ya jalan las cookies de js
 }
