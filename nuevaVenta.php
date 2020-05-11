@@ -22,6 +22,8 @@
         $query = mysqli_query($con, $sqlUpdate);
         $sqlUpdate = "UPDATE productos SET vendidos=$totalVendidos WHERE nombre = '$product'";
         $query = mysqli_query($con, $sqlUpdate);
+        // $sql = "INSERT INTO ventas (fechaHora, pago, productos, idCajero) values($id, '".$name."', $stock, $price, $cost)";
+        // $query = mysqli_query($con, $sql);
       }
     }
   }
