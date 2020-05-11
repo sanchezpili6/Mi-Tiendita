@@ -156,64 +156,6 @@
                       <button class="btn btn-primary btn-purchase" type="submit">Realizar compra</button>
                   </section>
                   <!-- Product-->
-
-              <h2 align="center" class="h1">Productos</h2>
-              <div class="shop-items">
-                  <div class="shop-item">
-                      <span class="shop-item-title">Nito</span>
-                      <div class="shop-item-details">
-                          <span class="shop-item-price">$15</span>
-                          <button class="btn btn-primary shop-item-button" type="button">AÑADIR A CARRITO</button>
-                      </div>
-                  </div>
-                  <div class="shop-item">
-                      <span class="shop-item-title">HeladoHersheys</span>
-                      <div class="shop-item-details">
-                          <span class="shop-item-price">$59</span>
-                          <button class="btn btn-primary shop-item-button" type="button">AÑADIR A CARRITO</button>
-                      </div>
-                  </div>
-                  <div class="shop-item">
-                      <span class="shop-item-title">Chokis</span>
-                      <div class="shop-item-details">
-                          <span class="shop-item-price">$14.5</span>
-                          <button class="btn btn-primary shop-item-button" type="button">AÑADIR A CARRITO</button>
-                      </div>
-                  </div>
-                  <div class="shop-item">
-                      <span class="shop-item-title">ChokoChokis</span>
-                      <div class="shop-item-details">
-                          <span class="shop-item-price">$20</span>
-                          <button class="btn btn-primary shop-item-button" type="button">AÑADIR A CARRITO</button>
-                      </div>
-                  </div>
-              </div>
-          </section>
-                    <section class="container content-section">
-                      <br><br><br>
-                      <div class="cart-row">
-                          <span class="cart-item cart-header cart-column">ITEM</span>
-                          <span class="cart-item cart-header cart-column">PRICE</span>
-                          <span class="cart-item cart-header cart-column">QUANTITY</span>
-                      </div>
-                      <br><br>
-                      <div class="cart-items">
-                      </div>
-                      <div class="cart-total">
-                          <strong class="cart-total-title">Total</strong>
-                          <span class="cart-total-price">$0</span>
-                      </div>
-                      <button class="btn btn-primary btn-purchase" type="submit">Realizar compra</button>
-                  </section>
-
-                  <!-- Product-->
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
             </main>
             </div>
             </div>
