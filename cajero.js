@@ -4,7 +4,6 @@ if (document.readyState == 'loading') {
     ready()
 }
 
-var items = [];
 
 function ready() {
     var removeCartItemButtons = document.getElementsByClassName('btn-danger')
@@ -79,7 +78,7 @@ function addItemToCart(title, price) {
         </div>
         <span class="cart-price cart-column">${price}</span>
         <div class="cart-quantity cart-column">
-            <input name="${title}" class="cart-quantity-input" type="number" value="1">
+            <input class="cart-quantity-input" type="number" value="1">
             <button class="btn btn-danger" type="button">REMOVE</button>
         </div>`
     cartRow.innerHTML = cartRowContents
@@ -88,15 +87,47 @@ function addItemToCart(title, price) {
     cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
 }
 
-function createCookie(name, value, days) {
-=======
-function createCookie(name, value, days) {
->>>>>>> parent of db00d12... Ya jalan las cookies de js
-=======
-function createCookie(name, value, days) {
->>>>>>> parent of db00d12... Ya jalan las cookies de js
+var products = []
+
+function updateCartTotal(title) {
+  var cartItemContainer = document.getElementsByClassName('cart-items')[0];
+  var cartRows = cartItemContainer.getElementsByClassName('cart-row');
+  var total = 0
+  var found = false;
+  var foundIndex = 0;
+  var quantity = 0
+  for (var i = 0; i < products.length; i++) {
+    if (products[i] == title){
+      found = true;
+      foundIndex = i
+      break;
+    }
+  }
+  //for (var i = 0; i < cartRows.length; i++) {
+    var cartRow = cartRows[i]
+    var priceElement = cartRow.getElementsByClassName('cart-price')[0]
+    var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
+    var price = parseFloat(priceElement.innerText.replace('$', ''))
+    quantity = quantityElement.value
+    console.log(title + "_" +quantity + "_" + i);
+    total += (price * quantity);
+  //}
+  if (found == false) {
+    products.push(title)
+    createCookie(products.length-1, quantity+"_"+title, "10");
+    createCookie("length", products.length, "10");
+  }
+  else {
+    createCookie(foundIndex, quantity+"_"+title, "10");
+  }
+  total = Math.round(total * 100) / 100
+  document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
+}
+
+
+function createCookie(name, quantity_product, days) {
+  document.cookie = name+"=; expires Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
   var expires;
-  quantity += "_"+title;
   if (days) {
     var date = new Date();
     date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
@@ -105,23 +136,5 @@ function createCookie(name, value, days) {
   else {
     expires = "";
   }
-  document.cookie = escape(name) + "=" + escape(value) + expires + "; path=/";
-}
-
-function updateCartTotal(title) {
-    var cartItemContainer = document.getElementsByClassName('cart-items')[0]
-    var cartRows = cartItemContainer.getElementsByClassName('cart-row')
-    var total = 0
-    for (var i = 0; i < cartRows.length; i++) {
-        var cartRow = cartRows[i]
-        var priceElement = cartRow.getElementsByClassName('cart-price')[0]
-        var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
-        var price = parseFloat(priceElement.innerText.replace('$', ''))
-        var quantity = quantityElement.value
-        console.log(title);
-        createCookie(title, quantity, "10");
-        total = total + (price * quantity)
-    }
-    total = Math.round(total * 100) / 100
-    document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
+  document.cookie = escape(name) + "=" + escape(quantity_product) + expires + "; path=/";
 }
