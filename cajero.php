@@ -74,6 +74,22 @@
             </nav>
             <!--Barra izquierda-->
             <!--Cajero-->
+            <?php
+              if (isset($_GET['status'])) {
+                if ($_GET['status'] === '0') {
+                  echo "<div class='col-md-9 ml-sm-auto col-lg-10 pt-3 px-4 alert alert-success' role='alert'>
+                          Se ha realizado la venta exitosamente
+                        </div>";
+                }
+                elseif ($_GET['status'] === '1'){
+                  $product = $_GET['products'];
+                  echo "AQUIII" . $product;
+                  echo "<div class='col-md-9 ml-sm-auto col-lg-10 pt-3 px-4 alert alert-danger' role='alert'>
+                          No hay suficientes existencias de ". $product.
+                       "</div>";
+                }
+              }
+            ?>
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
               <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
                 <h1 class="h2">Carrito de compra</h1>
@@ -99,7 +115,7 @@
                       </div>
                   </div>
                   <div class="shop-item">
-                      <span class="shop-item-title">HeladoHersheys</span>
+                      <span class="shop-item-title">Helado hersheys</span>
                       <div class="shop-item-details">
                           <span class="shop-item-price">$59</span>
                           <button class="btn btn-primary shop-item-button" type="button">AÑADIR A CARRITO</button>
@@ -113,7 +129,7 @@
                       </div>
                   </div>
                   <div class="shop-item">
-                      <span class="shop-item-title">ChokoChokis</span>
+                      <span class="shop-item-title">Choko chokis</span>
                       <div class="shop-item-details">
                           <span class="shop-item-price">$20</span>
                           <button class="btn btn-primary shop-item-button" type="button">AÑADIR A CARRITO</button>

@@ -4,6 +4,7 @@ if (document.readyState == 'loading') {
     ready()
 }
 
+var items = [];
 
 function ready() {
     var removeCartItemButtons = document.getElementsByClassName('btn-danger')
@@ -43,11 +44,13 @@ function removeCartItem(event) {
 }
 
 function quantityChanged(event) {
-    var input = event.target
-    if (isNaN(input.value) || input.value <= 0) {
-        input.value = 1
-    }
-    updateCartTotal()
+  var input = event.target
+  var cartItem = input.parentElement.parentElement
+  var title = cartItem.getElementsByClassName('cart-item')[0].innerText
+  if (isNaN(input.value) || input.value <= 0) {
+      input.value = 1
+  }
+  updateCartTotal(title)
 }
 
 function addToCartClicked(event) {
@@ -85,9 +88,40 @@ function addItemToCart(title, price) {
     cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
 }
 
-function createCookie(name, value, days) {
+function updateCartTotal(title) {
+  var cartItemContainer = document.getElementsByClassName('cart-items')[0];
+  var cartRows = cartItemContainer.getElementsByClassName('cart-row');
+  var total = 0;
+  if (items.length == 0) {
+    items[0] = title;
+  }
+  else {
+    for (var i = 0; i < items.length; i++) {
+      console.log(items[i]);
+      if (items[i].localeCompare(title) !== 0){
+        items.push(title);
+      }
+    }
+    console.log(items);
+  }
+
+  for (var i = 0; i < cartRows.length; i++) {
+      var cartRow = cartRows[i]
+      var priceElement = cartRow.getElementsByClassName('cart-price')[0]
+      var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
+      var price = parseFloat(priceElement.innerText.replace('$', ''))
+      var quantity = quantityElement.value
+      createCookie(i, quantity, "10", title);
+      total = total + (price * quantity)
+  }
+  total = Math.round(total * 100) / 100
+  document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
+}
+
+function createCookie(name, quantity, days, title) {
   document.cookie = name+"=; expires Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
   var expires;
+  quantity += "_"+title;
   if (days) {
     var date = new Date();
     date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
@@ -96,23 +130,5 @@ function createCookie(name, value, days) {
   else {
     expires = "";
   }
-  document.cookie = escape(name) + "=" + escape(value) + expires + "; path=/";
-}
-
-function updateCartTotal(title) {
-    var cartItemContainer = document.getElementsByClassName('cart-items')[0]
-    var cartRows = cartItemContainer.getElementsByClassName('cart-row')
-    var total = 0
-    for (var i = 0; i < cartRows.length; i++) {
-        var cartRow = cartRows[i]
-        var priceElement = cartRow.getElementsByClassName('cart-price')[0]
-        var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
-        var price = parseFloat(priceElement.innerText.replace('$', ''))
-        var quantity = quantityElement.value
-        console.log(title);
-        createCookie(i, quantity, "10");
-        total = total + (price * quantity)
-    }
-    total = Math.round(total * 100) / 100
-    document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
+  document.cookie = escape(name) + "=" + escape(quantity) + expires + "; path=/";
 }
