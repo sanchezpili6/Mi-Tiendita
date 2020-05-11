@@ -98,13 +98,13 @@
       <div class="container content-section" name="cobra">
         <link href="cajero.css" rel="stylesheet">
         <div class="row mb-5">
-
+          <form action="nuevaVenta.php" method="post">
             <div class="col-lg-8 pr-xl-5">
               <div class="cart mb-5">
-                <form action="nuevaVenta.php" method="get">
                 <div class="cart-body">
                   <section class="container content-section">
                     <input type="text" name="busca" class="form-control form-control-light w-100" placeholder="Busca el producto" aria-label="Busca">
+
               <h2 align="center" class="h1">Productos</h2>
               <div class="shop-items">
                   <div class="shop-item">
@@ -156,9 +156,9 @@
                   <!-- Product-->
 
                 </div>
-              </form>
+              </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </section>

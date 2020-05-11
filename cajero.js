@@ -79,7 +79,7 @@ function addItemToCart(title, price) {
         </div>
         <span class="cart-price cart-column">${price}</span>
         <div class="cart-quantity cart-column">
-            <input class="cart-quantity-input" type="number" value="1">
+            <input name="${title}" class="cart-quantity-input" type="number" value="1">
             <button class="btn btn-danger" type="button">REMOVE</button>
         </div>`
     cartRow.innerHTML = cartRowContents
@@ -88,6 +88,7 @@ function addItemToCart(title, price) {
     cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
 }
 
+<<<<<<< HEAD
 function updateCartTotal(title) {
   var cartItemContainer = document.getElementsByClassName('cart-items')[0];
   var cartRows = cartItemContainer.getElementsByClassName('cart-row');
@@ -120,6 +121,9 @@ function updateCartTotal(title) {
 
 function createCookie(name, quantity, days, title) {
   document.cookie = name+"=; expires Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+=======
+function createCookie(name, value, days) {
+>>>>>>> parent of db00d12... Ya jalan las cookies de js
   var expires;
   quantity += "_"+title;
   if (days) {
@@ -130,5 +134,27 @@ function createCookie(name, quantity, days, title) {
   else {
     expires = "";
   }
+<<<<<<< HEAD
   document.cookie = escape(name) + "=" + escape(quantity) + expires + "; path=/";
+=======
+  document.cookie = escape(name) + "=" + escape(value) + expires + "; path=/";
+}
+
+function updateCartTotal(title) {
+    var cartItemContainer = document.getElementsByClassName('cart-items')[0]
+    var cartRows = cartItemContainer.getElementsByClassName('cart-row')
+    var total = 0
+    for (var i = 0; i < cartRows.length; i++) {
+        var cartRow = cartRows[i]
+        var priceElement = cartRow.getElementsByClassName('cart-price')[0]
+        var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
+        var price = parseFloat(priceElement.innerText.replace('$', ''))
+        var quantity = quantityElement.value
+        console.log(title);
+        createCookie(title, quantity, "10");
+        total = total + (price * quantity)
+    }
+    total = Math.round(total * 100) / 100
+    document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total
+>>>>>>> parent of db00d12... Ya jalan las cookies de js
 }
