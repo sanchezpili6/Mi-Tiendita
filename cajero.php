@@ -164,7 +164,7 @@
                           <strong class="cart-total-title">Total</strong>
                           <span class="cart-total-price">$0</span>
                       </div>
-                      <button class="btn btn-primary btn-purchase" type="submit">Realizar compra</button>
+                      <button class="btn btn-primary btn-purchase" type="submit" onclick="encuesta()">Realizar compra</button>
                   </section>
                   <!-- Product-->
           </form>

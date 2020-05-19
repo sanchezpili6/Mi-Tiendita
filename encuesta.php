@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <link href="bootstrap.min.css" rel="stylesheet">
-    <link href="dashboard.css" rel="stylesheet">
-    <meta charset="utf-8">
-    <link rel="icon" href="imágenes/logo_size.jpg">
-    <title>Inventario</title>
-  </head>
+<head>
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="dashboard.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <link rel="icon" href="imágenes/logo_size.jpg">
+  <title>Inventario</title>
+</head>
   <body>
-    <!--Barra de navegaciónde arriba-->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="index.html">Mi Tiendita</a>
       <div class="collapse navbar-collapse sticky-top" id="navbarSupportedContent">
@@ -112,58 +111,6 @@
       </div>
     </div>
     <!--Barra de la izquierda-->
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" name="search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    <br>
-    <table class="table container-fluid">
-      <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-      <thead class="thead-dark">
-        <tr>
-          <th>Id</th>
-          <th>Nombre</th>
-          <th>Existencias</th>
-          <th>Precio al público</th>
-          <th>Precio de proveedor</th>
-          <th>Vendidos</th>
-        </tr>
-      </thead>
-      <?php
-      include "db.php";
-      global $con;
-      if (!isset($_REQUEST['search']) || $_REQUEST['search'] === "") {
-        $sql = "SELECT * FROM productos";
-      }
-      elseif($_REQUEST['search'] === "vendidos") {
-        $sql = "SELECT * FROM productos ORDER BY vendidos DESC";
-      }
-      else {
-        $search = $_REQUEST['search'];
-        $sql = "SELECT * FROM productos WHERE nombre = '$search'";
-      }
-      $res = mysqli_query($con, $sql);
-      while($row = mysqli_fetch_assoc($res)){
-        echo "
-        <tbody>
-          <tr>
-            <td>".$row['id']."</td>
-            <td>".$row['nombre']."</td>
-            <td>".$row['existencias']."</td>
-            <td>".$row['precio']."</td>
-            <td>".$row['costo']."</td>
-            <td>".$row['vendidos']."</td>
-          </tr>
-        </tbody>";
-      }
-      mysqli_close($con);
-      ?>
-    </table>
-  </main>
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="../../assets/js/vendor/popper.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
+    
   </body>
 </html>

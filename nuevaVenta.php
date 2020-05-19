@@ -5,6 +5,7 @@
   $quantity = 0;
   $product = "";
   $productsMissing = "";
+  $encuesta = $_COOKIE['encuesta'];
   for ($i = 0; $i < $_COOKIE['length']; $i++) {
     list($quantity, $product) = explode("_", $_COOKIE[$i]);
     $query = "SELECT * FROM productos WHERE nombre = '$product'";
@@ -24,9 +25,13 @@
         $query = mysqli_query($con, $sqlUpdate);
         // $sql = "INSERT INTO ventas (fechaHora, pago, productos, idCajero) values($id, '".$name."', $stock, $price, $cost)";
         // $query = mysqli_query($con, $sql);
+        $fecha = date("2020-05-20 19:20:00");
+        $sql = "INSERT INTO ventas (fechaHora, pago, productos, idCajero, comentarioDelCliente) values($fecha, 15, 'Chokis', 4, $encuesta)";
+        $query = mysqli_query($con, $sql);
       }
     }
   }
   mysqli_close($con);
-  header("Location: http://localhost/Mi-Tiendita/cajero.php?status=".$status."&products=".$productsMissing);
+
+  //header("Location: http://localhost/Mi-Tiendita/cajero.php?status=".$status."&products=".$productsMissing);
 ?>

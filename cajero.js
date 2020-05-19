@@ -28,6 +28,15 @@ function ready() {
 }
 
 function purchaseClicked() {
+    var txt;
+    var person = prompt("Del 1 al 10, qué tan satisfecho estás con tu compra?", "10");
+    if (person == null || person == "") {
+      txt = "User cancelled the prompt.";
+    } else {
+      createCookie("encuesta", person, 10);
+      txt = "Gracias por tu valoración";
+    }
+    document.getElementById("demo").innerHTML = txt;
     var cartItems = document.getElementsByClassName('cart-items')[0]
     while (cartItems.hasChildNodes()) {
         cartItems.removeChild(cartItems.firstChild)
