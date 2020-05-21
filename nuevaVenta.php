@@ -6,6 +6,13 @@
   $product = "";
   $productsMissing = "";
   $encuesta = $_COOKIE['encuesta'];
+  $query = "SELECT * FROM ventas ORDER BY idVenta asc ";
+  $res = mysqli_query($con, $query);
+  $lastId = 0;
+  while ($row = mysqli_fetch_assoc($res)) {
+    $lastId = $row['idVenta'];
+  }
+  $lastId++;
   for ($i = 0; $i < $_COOKIE['length']; $i++) {
     list($quantity, $product) = explode("_", $_COOKIE[$i]);
     $query = "SELECT * FROM productos WHERE nombre = '$product'";
@@ -23,15 +30,16 @@
         $query = mysqli_query($con, $sqlUpdate);
         $sqlUpdate = "UPDATE productos SET vendidos=$totalVendidos WHERE nombre = '$product'";
         $query = mysqli_query($con, $sqlUpdate);
-        // $sql = "INSERT INTO ventas (fechaHora, pago, productos, idCajero) values($id, '".$name."', $stock, $price, $cost)";
-        // $query = mysqli_query($con, $sql);
-        $fecha = date("2020-05-20 19:20:00");
-        $sql = "INSERT INTO ventas (fechaHora, pago, productos, idCajero, comentarioDelCliente) values($fecha, 15, 'Chokis', 4, $encuesta)";
-        $query = mysqli_query($con, $sql);
+        $pago = $quantity * $row['precio'];
+        $sql = "INSERT INTO ventas (idVenta, fechaHora, pago, productos, idCajero, comentarioDeCliente) values($lastId, now(), $pago, '".$product."', 4, $encuesta)";
+        if (!mysqli_query($con, $sql)) {
+          echo mysqli_error($con);
+        }
       }
     }
+
   }
   mysqli_close($con);
 
-  //header("Location: http://localhost/Mi-Tiendita/cajero.php?status=".$status."&products=".$productsMissing);
+  header("Location: http://localhost/Mi-Tiendita/cajero.php?status=".$status."&products=".$productsMissing);
 ?>
