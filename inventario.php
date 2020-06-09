@@ -144,18 +144,34 @@
         $sql = "SELECT * FROM productos WHERE nombre = '$search'";
       }
       $res = mysqli_query($con, $sql);
-      while($row = mysqli_fetch_assoc($res)){
+      if ($row = mysqli_fetch_assoc($res)) {
         echo "
         <tbody>
-          <tr>
-            <td>".$row['id']."</td>
-            <td>".$row['nombre']."</td>
-            <td>".$row['existencias']."</td>
-            <td>".$row['precio']."</td>
-            <td>".$row['costo']."</td>
-            <td>".$row['vendidos']."</td>
-          </tr>
+        <tr>
+        <td>".$row['id']."</td>
+        <td>".$row['nombre']."</td>
+        <td>".$row['existencias']."</td>
+        <td>".$row['precio']."</td>
+        <td>".$row['costo']."</td>
+        <td>".$row['vendidos']."</td>
+        </tr>
         </tbody>";
+        while($row = mysqli_fetch_assoc($res)) {
+          echo "
+          <tbody>
+          <tr>
+          <td>".$row['id']."</td>
+          <td>".$row['nombre']."</td>
+          <td>".$row['existencias']."</td>
+          <td>".$row['precio']."</td>
+          <td>".$row['costo']."</td>
+          <td>".$row['vendidos']."</td>
+          </tr>
+          </tbody>";
+        }
+      }
+      else {
+        echo "<h1>No existe tal producto en el inventario</h1>";
       }
       mysqli_close($con);
       ?>
