@@ -23,7 +23,6 @@ else if ($email === 'ricardo@casco.com' && $password === 'ricardo') {
   header('Location: http://localhost/Mi-Tiendita/dashboard.html');
 }
 else {
-  //header('Location: http://localhost/Mi-Tiendita/inicio_sesion.html');
   echo "Wrong username or password";
 }
  ?>

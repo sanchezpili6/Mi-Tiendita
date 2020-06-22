@@ -14,5 +14,6 @@
 
   $query = "INSERT INTO staff (id, nombre, fechaRegistro, sueldo, tipo, password, dias, horario) values($id, '".$nombre." ".$apellido."', '".$fechaRegistro."', $sueldo, 'Cajero', '".$password."', '".$dias."', '".$horario."')";
   $res = mysqli_query($con, $query);
-  echo mysqli_error($con);  
+  echo mysqli_error($con);
+  header("Location: http://localhost/Mi-Tiendita/registroPer.html");
 ?>
